@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
+:root {
+  --border-light: 2px solid #d4d7da44;
+  --border-dark: 2px solid #bbbbbb1c;
+  --hverdark:  #ffffff;
+  --hverlight: #8a8a8a ;
+
+
+}
+
+
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ececec;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:  #a3a3a3;
+}
+
+[data-theme='light'] {
+  --border: var(--border-light);
+}
+
+[data-theme='dark'] {
+  --border: var(--border-dark);
+}
+
+
+.boder-fream{
+  border:  var(--border);
+}
+.boder-fream-bt{
+  border-bottom: var(--border);
+}
+.boder-fream-t{
+  border-top: var(--border);
+}
+.boder-fream-l{
+  border-left: var(--border);
+}
+.boder-fream-r{
+  border-right: var(--border);
+}
+
+.pro-inner-item:hover{
+  color: hverdark !important
+}
+.pro-menu-item.active{
+  color: hverdark !important
+}
