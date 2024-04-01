@@ -5,7 +5,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./Theme";
 import Sidebar from "./components/Public/Sidebar";
 
-// add Page
+// add Pagesss
 import Home from "./components/home";
 import About from "./components/Public/about";
 import Topbar from "./components/Public/topbar";
