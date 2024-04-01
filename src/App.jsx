@@ -10,7 +10,7 @@ import Home from "./components/home";
 import About from "./components/Public/about";
 import Topbar from "./components/Public/topbar";
 import BottomPage from "./components/Public/bottomPage";
-//---
+//---1
 function App() {
     const [theme, colorMode] = useMode();
     console.log(theme.palette.mode)
