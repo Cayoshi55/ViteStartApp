@@ -18,20 +18,12 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
-    console.log(to)
-    const Onclicklink= (e) =>{
-
-     console.log(e)
-      }
+   
     return (
         <>
             <MenuItem
                 active={selected === title}
-                style={{
-                    color: colors.grey[100],
-                }}
+                
                 onClick={() => setSelected(title)}
                 icon={icon}
             >
@@ -54,7 +46,7 @@ const Sidebar = () => {
         <Box className="boder-fream-r"
             sx={{
                 "& .pro-sidebar-inner": {
-                    background: `${colors.primary[400]} !important`,
+                    background: `${colors.grey[900]} !important`,
                 },
                 "& .pro-icon-wrapper": {
                     backgroundColor: "transparent !important",
@@ -73,12 +65,12 @@ const Sidebar = () => {
                         icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
                         style={{
                             margin: "10px 0 20px 0",
-                            color: colors.grey[100],
+                          
                         }}
                     >
                         {!isCollapsed && (
                             <Box  display="flex" justifyContent="space-between" alignItems="center" ml="15px">
-                                <Typography variant="h6" color={colors.grey[100]}>
+                                <Typography variant="h6" >
                                     App Name
                                 </Typography>
                                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>

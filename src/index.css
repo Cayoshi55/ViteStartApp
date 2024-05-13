@@ -5,10 +5,20 @@
   --border-dark: 2px solid #bbbbbb1c;
   --hverdark:  #ffffff;
   --hverlight: #8a8a8a ;
-
+  --colorFont-datk: #e2e2e2;
+  --colorFont-light:  #3d3d3d ;
 
 }
 
+[data-theme='light'] {
+  --border: var(--border-light);
+  --colorfont:var(--colorFont-light);
+}
+
+[data-theme='dark'] {
+  --border: var(--border-dark);
+  --colorfont:var(--colorFont-datk);
+}
 
 
 html,
@@ -19,7 +29,7 @@ body,
   height: 100%;
   width: 100%;
   font-family: "Source Sans Pro", sans-serif;
-  
+  color: var(--colorfont);
 }
 
 .app {
@@ -46,15 +56,11 @@ body,
   background:  #a3a3a3;
 }
 
-[data-theme='light'] {
-  --border: var(--border-light);
+
+.pro-sidebar-inner{
+
+  color: var(--colorfont);
 }
-
-[data-theme='dark'] {
-  --border: var(--border-dark);
-}
-
-
 .boder-fream{
   border:  var(--border);
 }
