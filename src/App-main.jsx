@@ -6,7 +6,7 @@ import { ColorModeContext, useMode } from "./Theme";
 import Sidebar from "./components/Public/Sidebar";
 
 // add Pagesss
-import Home from "./components/home";
+import Home from "./View/home"
 import About from "./components/Public/about";
 import Topbar from "./components/Public/topbar";
 import BottomPage from "./components/Public/bottomPage";
