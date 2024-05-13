@@ -12,7 +12,8 @@ function Home() {
                 <h1>TEST App 0.125</h1>
                 <h1>Welcome Home</h1>
                 <h1>TEST App 15.599</h1>
-                <h1>TEST App 1</h1>
+                <h1>TEST App 1.2</h1>
+                <h1>TEST App 2</h1>
         </>
     );
 }
