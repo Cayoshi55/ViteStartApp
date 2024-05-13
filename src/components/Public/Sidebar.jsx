@@ -18,18 +18,11 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
-   
     return (
         <>
-            <MenuItem
-                active={selected === title}
-                
-                onClick={() => setSelected(title)}
-                icon={icon}
-            >
-                 <Typography> {title}</Typography>
-            
-                 
+            <MenuItem active={selected === title} onClick={() => setSelected(title)} icon={icon}>
+                <Typography> {title}</Typography>
+
                 {/* <Link to={to} />  */}
             </MenuItem>
         </>
@@ -43,7 +36,8 @@ const Sidebar = () => {
     const [selected, setSelected] = useState("Dashboard");
 
     return (
-        <Box className="boder-fream-r"
+        <Box
+            className="boder-fream-r"
             sx={{
                 "& .pro-sidebar-inner": {
                     background: `${colors.grey[900]} !important`,
@@ -54,7 +48,6 @@ const Sidebar = () => {
                 "& .pro-inner-item": {
                     padding: "5px 35px 5px 20px !important",
                 },
-              
             }}
         >
             <ProSidebar collapsed={isCollapsed}>
@@ -65,14 +58,11 @@ const Sidebar = () => {
                         icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
                         style={{
                             margin: "10px 0 20px 0",
-                          
                         }}
                     >
                         {!isCollapsed && (
-                            <Box  display="flex" justifyContent="space-between" alignItems="center" ml="15px">
-                                <Typography variant="h6" >
-                                    App Name
-                                </Typography>
+                            <Box display="flex" justifyContent="space-between" alignItems="center" ml="15px">
+                                <Typography variant="h6">App Name</Typography>
                                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                                     <MenuOutlinedIcon />
                                 </IconButton>
@@ -82,19 +72,12 @@ const Sidebar = () => {
 
                     {!isCollapsed && (
                         <Box mb="25px">
-                            <Box display="flex" justifyContent="center" alignItems="center">
-                               
-                            </Box>
-                       
+                            <Box display="flex" justifyContent="center" alignItems="center"></Box>
                         </Box>
                     )}
 
                     <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-                        <Item
-                            title="Dashboard"
-                            to="/"
-                            icon={<HomeOutlinedIcon />}
-                        />
+                        <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} />
                         {/* 
             <Typography
               variant="h6"
