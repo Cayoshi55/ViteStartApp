@@ -1,85 +1,395 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
 
 :root {
-  --border-light: 2px solid #d4d7da44;
-  --border-dark: 2px solid #bbbbbb1c;
-  --hverdark:  #ffffff;
-  --hverlight: #8a8a8a ;
-  --colorFont-datk: #e2e2e2;
-  --colorFont-light:  #3d3d3d ;
+    /* light */
+    --border-light: 2px solid #d4d7da44;
+    --colorFont-light: #3d3d3d;
+    --hverlight: #8a8a8a;
+    --bg-light: #f4ffff09;
+    --bgbuttomPagelight: #f1eef73a;
 
+    /* Dark */
+    --border-dark: 2px solid #bbbbbb1c;
+    --hverdark: #ffffff;
+    --colorFont-datk: #ece8e8;
+    --bg-dark: #c4c5c567;
+    --bgbuttomPageDark: #242527af;
 }
 
-[data-theme='light'] {
-  --border: var(--border-light);
-  --colorfont:var(--colorFont-light);
+[data-theme="light"] {
+    --border: var(--border-light);
+    --colorfont: var(--colorFont-light);
+    --bg: var(--bg-light);
+    --bgbuttomPage: var(--bgbuttomPagelight);
+    --bg-color-1: #ffffff88;
+    --bg-color-2: #718dda9f;
+    --bg-color-3: #45d1d191;
+    --bg-color-4: #0d58964d;
+    --bg-color-2-1: #c32ee0;
+    --bg-color-2-2: #8ce9e9ab;
+    --bg-color-2-3: #9f3dd8de;
+    --bg-color-2-4: #9e22e6de;
+    --bgBox: #ffffff8c;
+    --borderBox: #63676921;
+    --freamItemMenu: #ffffff48;
+    --scroll: #92a2b154;
 }
 
-[data-theme='dark'] {
-  --border: var(--border-dark);
-  --colorfont:var(--colorFont-datk);
-}
+[data-theme="dark"] {
+    --border: var(--border-dark);
+    --colorfont: var(--colorFont-datk);
+    --bg: var(--bg-dark);
+    --bgbuttomPage: var(--bgbuttomPageDark);
 
+    --bg-color-1: #3973a388;
+    --bg-color-2: #1d27429f;
+    --bg-color-3: #162c2c91;
+    --bg-color-4: #0d58964d;
+    --bg-color-2-1: #c32ee0;
+    --bg-color-2-2: #162c2cab;
+    --bg-color-2-3: #8626bede;
+    --bg-color-2-4: #8626bede;
+
+    --bgBox: #b7bbbe21;
+    --borderBox: #969da359;
+    --freamItemMenu: #12345654;
+    --scroll: #92a2b154;
+}
 
 html,
 body,
 #root,
 .app,
 .content {
-  height: 100%;
-  width: 100%;
-  font-family: "Source Sans Pro", sans-serif;
-  color: var(--colorfont);
+    margin: 0;
+    padding: 0;
+    /* display: grid;
+    grid-template-rows: auto 1fr auto; */
+    min-height: 100vh;
+    width: 100%;
+    font-family: "Source Sans Pro", sans-serif;
+    color: var(--colorfont);
+}
+
+body {
+    background-color: var(--bg);
 }
 
 .app {
-  display: flex;
-  position: relative;
+    display: flex;
+    position: relative;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #ececec;
+    background: #ececec;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #c2c2c2;
+    background: #c2c2c2;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background:  #a3a3a3;
+    background: #a3a3a3;
 }
 
-
-.pro-sidebar-inner{
-
-  color: var(--colorfont);
-}
-.boder-fream{
-  border:  var(--border);
-}
-.boder-fream-bt{
-  border-bottom: var(--border);
-}
-.boder-fream-t{
-  border-top: var(--border);
-}
-.boder-fream-l{
-  border-left: var(--border);
-}
-.boder-fream-r{
-  border-right: var(--border);
+.horizontal-scroll-container {
+    height: 200px; /* Example height */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
 }
 
-.pro-inner-item:hover{
-  color: hverdark !important
+.horizontal-scroll-container img {
+    display: inline-block; /* Ensure images are displayed inline for horizontal scrolling */
+    border-radius: 10px;
 }
-.pro-menu-item.active{
-  color: hverdark !important
+
+/* WebKit-based browsers */
+.horizontal-scroll-container::-webkit-scrollbar {
+    height: 8px; /* Height for horizontal scrollbar */
+    /* background-color: #641010;  Background color of the scrollbar container */
+    border-radius: 50px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+    background: #f5f5f5; /* Background color of the track */
+    border-radius: 50px; /* Rounded corners for the track */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #e6e6e6; /* Darker color when hovering over the thumb */
+    border-radius: 50px;
+}
+
+/* Firefox */
+.horizontal-scroll-container {
+    scrollbar-width: thin; /* Make the scrollbar thinner */
+    scrollbar-color: var(--scroll) #c9cccc11; /* Color of the thumb and track */
+}
+
+.pro-sidebar-inner {
+    color: var(--colorfont);
+}
+.boder-fream {
+    border: var(--border);
+}
+.boder-fream-bt {
+    border-bottom: var(--border);
+}
+.boder-fream-t {
+    border-top: var(--border);
+}
+.boder-fream-l {
+    border-left: var(--border);
+}
+.boder-fream-r {
+    border-right: var(--border);
+}
+
+.pro-inner-item:hover {
+    color: hverdark !important;
+}
+.pro-menu-item.active {
+    color: hverdark !important;
+}
+
+.element {
+    /* Gradient from top to bottom */
+    /* background-image: linear-gradient(to bottom, #59df4d, #4682b4); */
+
+    /* background-image: linear-gradient(45deg, #ff6347, #4682b4, #c832cd, #ff1493); */
+
+    /* Gradient from left to right */
+    /* background-image: linear-gradient(to right, #ff47ff, #4682b4); */
+
+    /* Diagonal gradient from top left to bottom right */
+    /* background-image: linear-gradient(to bottom right, #2a27ce, #4682b4); */
+
+    /* You can also specify the angle of the gradient */
+    /* 45 degree angle gradient */
+    background-image: linear-gradient(45deg, var(--bg-color-1), var(--bg-color-2), var(--bg-color-3), var(--bg-color-4)),
+        linear-gradient(150deg, var(--bg-color-2-1), var(--bg-color-2-2), var(--bg-color-2-3));
+    /* Create four linear gradients, each starting from one of the corners */
+    /* background-image: 
+   linear-gradient(to top left, #ff6347, transparent),
+   linear-gradient(to top right, #4682b4, transparent),
+   linear-gradient(to bottom right, #32cd32, transparent),
+   linear-gradient(to bottom left, #ff1493, transparent);
+ 
+ /* Combine all gradients and set background-size to cover */
+    /*background-size: 50% 50%;
+ background-position: top left, top right, bottom right, bottom left;
+ background-repeat: no-repeat; */
+}
+
+.paper-yoshi {
+    border: 1px solid #f3f3f338;
+    box-shadow: 2px 1px 2px rgba(223, 219, 219, 0.1);
+    border-radius: 5px;
+    left: 20px;
+    right: 20px;
+    background: var(--freamItemMenu);
+    padding: 10px;
+    margin: 20px;
+}
+
+.paper-yoshi-title {
+    font-size: 18px;
+}
+
+.paper-yoshi body {
+    display: block;
+}
+
+.Bottom-Page {
+    height: 300px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    background: var(--bgbuttomPage);
+    padding: 20px; /* Padding */
+    text-align: center; /* Centered text */
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3); /* Shadow above the footer */
+    border-top: 2px solid #3c13868a; /* Top border */
+}
+.Bottom-Page-info {
+    font-weight: bold;
+}
+
+.freamItemMenu {
+    background: var(--freamItemMenu);
+    height: 200px;
+    max-height: 550px;
+    overflow-x: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.ItemSet {
+    display: flex;
+    /* flex-wrap: wrap; */
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: center;
+}
+
+.freamItemMenu-1{
+  background: var(--freamItemMenu);
+  height: 100px;
+  max-height: 550px;
+  overflow-x: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.Item-set1 {
+    width: 75px;
+    min-width: 75px;
+    height: 75px;
+    min-height: 75px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-left: 15px;
+    padding: 3px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: var(--bgBox);
+    border-radius: 3px;
+    border: 1px solid var(--borderBox);
+    cursor: pointer;
+}
+
+.Product-main {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+}
+
+.Product-Item {
+    background: var(--bg) ;
+    width: 150px;
+    height: 220px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+}
+
+.Product-Item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.image-product {
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #1a79c7fa;
+    height: 150px;
+}
+
+.bt-logoItem {
+    display: flex;
+    position: relative;
+    margin-bottom: -29px;
+    padding-left: 1px;
+    padding-right: 1px;
+    bottom: 30px;
+    height: 30px;
+    align-items: center;
+    background: #4082b854;
+    border-radius: 2px;
+    justify-content: space-between;
+}
+.top-logoItem {
+    display: flex;
+    position: relative;
+    margin-top: -30px;
+    padding-left: 1px;
+    padding-right: 1px;
+    top: 30px;
+    height: 30px;
+    align-items: center;
+    background: #4082b854;
+    border-radius: 2px;
+    justify-content: space-between;
+}
+.Product-info {
+    display: flex;
+    padding-left: 3px;
+    padding-right: 3px;
+    align-items: center;
+}
+.status-sell{
+  margin-right: 3px;
+}
+.Product-detail{
+font-size: small;
+line-height: 13px;
+}
+
+.pro-item{
+  padding-left: 2px;
+  padding-right: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  min-height: 20px;
+  overflow: auto;
+
+  scrollbar-width: thin; /* Make the scrollbar thinner */
+  scrollbar-color: var(--scroll) #c9cccc11; /* Color of the thumb and track */
+}
+.fprice-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price-item {
+  padding-left: 3px;
+  padding-right: 3px;
+  /* bottom: -23px; */
+  top: -7px;
+  position: relative;
+}
+
+.price-issell {
+    font-size: x-small;
+}
+
+.body-Product{
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.filter-Product{
+
+  width: 180px;
+  min-width: 180px;
+
+}
+.filter{
+  background: var(--bgBox);
+  border:1px solid var(--bg);
+  border-radius: 10px;
+  min-height: 300px;
+  margin: 5px;
+  padding: 10px;
 }

@@ -3,7 +3,7 @@ import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
-import { tokens } from "../../Theme";
+// import { tokens } from "../../Theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
@@ -31,7 +31,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 
 const Sidebar = () => {
     const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
+    // const colors = tokens(theme.palette.mode);
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState("Dashboard");
 
@@ -40,7 +40,7 @@ const Sidebar = () => {
             className="boder-fream-r"
             sx={{
                 "& .pro-sidebar-inner": {
-                    background: `${colors.grey[900]} !important`,
+                    // background: `${colors.grey[900]} !important`,
                 },
                 "& .pro-icon-wrapper": {
                     backgroundColor: "transparent !important",
