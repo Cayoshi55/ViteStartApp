@@ -1,6 +1,6 @@
 
-import "./../../index.css"
 
+import "./../../css/index.css"
 function BottomPage() {
     return (
         <>
